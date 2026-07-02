@@ -39,12 +39,12 @@ class Result : public Exam {
 public: 
     Result (int m[3]) : Exam(m) {}
 
-    int sum = 0;
     double calculateAverage() {
+        int sum = 0;
         for (int i=0; i<3; i++) {
             sum += getMarks(i);
         }
-        return sum/3;
+        return sum/3.0;
     }
 };
 

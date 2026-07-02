@@ -42,7 +42,7 @@ public:
         } else {
             cout << "Amount cannot be zero or negative." << endl;
         }
-
+        
         return *this;
     }
 

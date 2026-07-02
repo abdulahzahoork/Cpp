@@ -21,7 +21,7 @@ private:
     int speed;
 
 public: 
-    Vehicle (int s): speed(s) {}
+    Vehicle (int s): speed((s<0)? 0 : s) {}
 
     void showSpeed() const {
         cout << "Speed: " << speed << endl;

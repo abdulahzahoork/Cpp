@@ -70,11 +70,11 @@ private:
 public: 
     Student (string n, int a, int roll, int m[3]) : Person(n, a), rollNo(roll) {
         for (int i=0; i<3; i++) {
-            marks[i] = m[i];
+            marks[i] = (m[i] < 0)? 0 : (m[i] > 100 ? 100 : m[i]);
         }
     }
 
-    void calculateTotal() {
+    void calculateTotal() const {
         int sum = 0;
         for (int i=0; i<3; i++) {
             sum += marks[i];
@@ -82,7 +82,7 @@ public:
         cout << "Total Marks = " << sum << endl;
     }
 
-    void calculateAverage() {
+    void calculateAverage() const {
         int sum = 0; 
         for (int i=0; i<3; i++) {
             sum += marks[i];
@@ -90,7 +90,7 @@ public:
         cout << "Average Marks = " << (float)sum/3 << endl;
     }
 
-    void displayResult() {
+    void displayResult() const {
         displayPerson();
         cout << "Roll no: " << rollNo << endl;
         for (int i=0; i<3; i++) {
@@ -139,8 +139,8 @@ int main() {
 
     cout << "--------------- Students Results ---------------" << endl;
 
-    for (int i=0; i<students.size(); i++) {
-        students[i].displayResult();
+    for (auto &s : students) {
+        s.displayResult();
         cout << endl;
     }
 
