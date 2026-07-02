@@ -2,8 +2,8 @@
 
 // Value of the variable
 // Address of the variable
-// Value stored in the pointer
-// Value pointed to by the pointer
+// Value stored in the pointer 
+// Value pointed to by the pointer 
 
 
 #include <iostream>
@@ -15,8 +15,8 @@ int main() {
 
     cout << "Value of x: " << x << endl;
     cout << "Address of x: " << &x << endl;
-    cout << "Value of ptr: " << *ptr << endl;
-    cout << "Address of ptr: " << ptr << endl;
+    cout << "Value stored in pointer: " << ptr << endl;
+    cout << "Value pointed to by pointer: " << *ptr << endl;
 
     return 0;
 }
