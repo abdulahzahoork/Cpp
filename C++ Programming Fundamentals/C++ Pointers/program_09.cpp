@@ -6,8 +6,10 @@ using namespace std;
 void findGreater(int *i, int *j) {
     if (*i > *j) {
         cout << *i << " is greater." << endl;
-    } else {
+    } else if (*j > *i) {
         cout << *j << " is greater." << endl;
+    } else {
+        cout << "Both numbers are equal." << endl;
     }
 }
 
@@ -18,4 +20,4 @@ int main() {
     findGreater(&a, &b);
 
     return 0;
-} 
+}
