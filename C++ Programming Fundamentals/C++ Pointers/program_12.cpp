@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-int countVowels(string *ptr) {
+int countVowels(char *ptr) {
     int count = 0;
 
     while (*ptr) {
@@ -18,9 +18,9 @@ int countVowels(string *ptr) {
 }
 
 int main() {
-    string name = "Muhammad Abdullah Khan";
+    char name[100] = "Muhammad Abdullah Khan";
     
-    cout << "Number of vowels: " << countVowels(&name) << endl;
+    cout << "Number of vowels: " << countVowels(name) << endl;
 
     return 0;
 }
