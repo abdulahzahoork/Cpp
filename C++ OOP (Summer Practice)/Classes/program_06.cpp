@@ -25,7 +25,7 @@ public:
         return (a+b);
     }
 
-    double add(int a, int b, int c) {
+    int add(int a, int b, int c) {
         return a+b+c;
     }
 };
