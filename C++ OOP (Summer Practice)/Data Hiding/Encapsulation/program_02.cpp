@@ -4,6 +4,7 @@
 // Prevent withdrawal if the amount exceeds the balance.
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 class BankAccount {
