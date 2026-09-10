@@ -63,7 +63,7 @@ class Employee : public Person {
     public: 
         Employee(string name, int age, string empID, int salary): Person(name, age), empID(empID), salary(salary) {}
 
-        void displayEmployee() {
+        void displayEmployee() const {
             displayPerson();
             cout << "Employee ID: " << empID << endl;
             cout << "Salary: " << salary << endl;
@@ -76,12 +76,11 @@ class Manager : public Employee {
     public: 
         Manager(string name, int age, string empID, int salary, int bonus) : Employee(name, age, empID, salary), bonus(bonus) {}
 
-        int calculateSalary() {
-            salary += bonus; 
-            return salary;
+        int calculateSalary() const {
+            return salary+bonus;
         }
 
-        void displayManager() {
+        void displayManager() const {
             displayEmployee();
             cout << "Bonus: " << bonus << endl;
             cout << "Net Salary: " << calculateSalary() << endl;
@@ -89,7 +88,26 @@ class Manager : public Employee {
 };
 
 int main() {
-    Manager m("Abdullah", 30, "emp-001", 20000, 2000);
+    string name, empID;
+    int age, salary, bonus;
+
+    cout << "Enter name: ";
+    getline(cin, name);
+
+    cout << "Enter age: ";
+    cin >> age;
+    cin.ignore();
+
+    cout << "Enter employee ID: ";
+    getline(cin, empID);
+
+    cout << "Enter salary: ";
+    cin >> salary;
+
+    cout << "Enter bonus: ";
+    cin >> bonus;
+
+    Manager m(name, age, empID, salary, bonus);
 
     m.displayManager();
 
